@@ -1,35 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserInfo"
+const baseUrl = "http://api.openweathermap.org/data/2.5/weather?"
+const key =" ";
+  const  UserInfo = (props) =>{
+  const[zip, setZip] = useState(46077);
+  const[date, setDate] = useState(Date.getDate());
+      
+  const fetchResults = () => {
+    let url = `${baseUrl}zip=${zip}&appid=${key}`;
 
-class inputForm extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {value: ''};
+    fetch(url)
+    .then(res => res.json())
+  }
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
   
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
   
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
   
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
+  
+  return (
+        <form>
           <label>
-            Longitude:
-            <input type="text" value={this.state.value} onChange={this.handleChange} />
+            Zipcode:
+            <input type="number" value={zip}  />
           </label>
           <input type="submit" value="Submit" />
         </form>
       );
     }
-  }
 
-  export default inputForm;
+  export default UserInfo;

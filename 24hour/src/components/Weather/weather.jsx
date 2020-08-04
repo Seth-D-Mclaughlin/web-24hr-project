@@ -1,6 +1,7 @@
 import React from 'react';
 import './weather.css';
 
+// const[zipcode]
 const Weather = (props) => {
   return(
     <div>
