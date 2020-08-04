@@ -1,7 +1,7 @@
 import React from 'react';
 import './weather.css';
-import Navbar from "./components/Navbar/Navbar";
 
+// const[zipcode]
 const Weather = (props) => {
   return(
     <div>
