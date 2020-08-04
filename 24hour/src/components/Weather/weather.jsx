@@ -1,6 +1,5 @@
 import React from 'react';
 import './weather.css';
-import Navbar from "./components/Navbar/Navbar";
 
 const Weather = (props) => {
   return(
